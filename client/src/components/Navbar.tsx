@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import { scrollToSection } from '../utils/scrollUtils';
-import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   activeSection: string;
@@ -39,11 +38,6 @@ const Navbar = ({ activeSection, theme, toggleTheme }: NavbarProps) => {
   const handleNavLinkClick = (section: string) => {
     scrollToSection(section);
     setIsOpen(false);
-  };
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, section: string) => {
-    e.preventDefault();
-    handleNavLinkClick(section);
   };
 
   return (
